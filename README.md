@@ -1,9 +1,9 @@
 # mb_PSRAM_64Mb_SPI.py
 
 Very Simple MicroPython module/driver for Espressif/Generic 64Mbit SPI PSRAM
-(Adafruit prdoduct ID: 4677 or similar)
+(Adafruit prdoduct ID: 4677 or similar). Works with RP2040, should work with other MicroPython boards that have SPI.
 
-This module is intended to make using the PSRAM device as simple as possible.
+This module is intended to make using the PSRAM as simple as possible.
 It only accepts an address (range 0-8388607) and a value (range 0-255).
 Values read from the PSRAM are returned as integers.
 
@@ -14,12 +14,12 @@ Version: 0.1, 2021-05-26
 **NOTE(1): There is no guarantee that this software will work in the way you expect (or at all).
 **Use at your own risk.
 
-**NOTE(2): Writing and reading 64Mib over SPI is _not_ fast. If you're concerned about
-** whether your program has crashed out over a long read or write loop, set up some sort
-** of heartbeat - a periodically flashing LED, print statment, etc.
+**NOTE(2): Writing and reading 64Mib over SPI is _not_ fast, and will be even slower if using software SPI.
+**If you're concerned about whether your program has crashed out over a long read or write loop, set up some sort
+** of heartbeat - a periodically flashing LED, print statment, beep, etc.
 
 **NOTE(3): As this is PSRAM and not SRAM, do not exceed the maximum operating frequency
-** or access the PSRAM outside its timing parameters as shown in the datasheet, or the
+** or use the PSRAM outside its timing parameters as shown in the datasheet, or the
 ** PSRAM may not have enough time to do an internal refresh, causing a loss of data.
 
 Prerequisites:
