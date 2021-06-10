@@ -49,10 +49,10 @@ memory = mb_PSRAM_64Mb_SPI.mb_PSRAM_64Mb_SPI(spi, cs)
 # Simple write test. Writing value of 38 to address 8388607 (highest address of this device)
 memory.write_byte(8388607, 38)
 
-# Write value 255 to address 0 (lowest address of the 23LC1024)
+# Write value 255 to address 0 (lowest address of this device)
 memory.write_byte(0, 255)
 
-# Simple read test. Read the value from address 131071 and print it
+# Simple read test. Read the value from address 8388607 and print it
 read_value = memory.read_byte(8388607)
 print("Retrieved: ", read_value)
 
